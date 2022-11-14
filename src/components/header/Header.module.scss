@@ -1,0 +1,91 @@
+@import '../../style/vars.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+
+  &-nav {
+    flex-grow: 2;
+    display: flex;
+    margin-left: 5%;
+    display: none;
+
+    li {
+      padding: 1% 2%;
+
+      a {
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 14px;
+
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+
+        color: #222222;
+
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &-subBlock {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    display: none;
+    margin-left: auto;
+    &--button {
+      min-width: 150px;
+      height: 40px;
+
+      &__signIn {
+        &>div {
+          button {
+            background: none;
+          }
+        }
+      }
+
+      &>div {
+        height: 40px;
+
+        &:hover {
+          padding: 8% 11%;
+
+          button {
+            font-size: 9px;
+          }
+        }
+
+        button {
+          word-wrap: normal;
+          color: black;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  &-logo{
+    min-width: 10%;
+  }
+}
+
+@media (min-width: $desktop) {
+  .header {
+    justify-content: flex-start;
+
+    &-nav {
+      display: flex;
+    }
+
+    &-subBlock {
+      display: flex;
+    }
+  }
+}
