@@ -1,0 +1,127 @@
+@import '../../style/main.scss';
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 0;
+  background: #F3F8FF;
+  overflow: hidden;
+  z-index: 5;
+  h2 {
+    margin-top: 1.2rem;
+    width: 90%;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 37px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 1.6px;
+    color: #1C202B;
+  }
+
+  p {
+    text-transform: uppercase;
+
+  }
+}
+
+.photos{
+  z-index: -1;
+  // background-color: rgba(0,0,0,.2);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  &-item{
+    width: 40%;
+    aspect-ratio: 1/1;
+    // border-radius: 50%;
+    // border: 2px solid black;
+    position: absolute;
+    opacity: 0.6;
+    display: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    &:nth-child(1){
+      display: block;
+      left: -10%;
+      top: -7%;
+      background-image: url('../../assets/img/red_girl.png');
+    }
+    &:nth-child(3){
+      display: block;
+      left: 60%;
+      bottom: -15%;
+      background-image: url('../../assets/img/blue_man.png');
+    }
+  }
+}
+
+.button {
+  margin-top: 5%;
+  button {
+    padding: 8% 10%;
+  }
+}
+
+@media (min-width: $desktop) {
+  .content{
+    padding: 30vh 0;
+    h2 {
+      width: 35%;
+      font-size: 57px;
+    }
+  }
+
+
+  .button {
+    margin-top: 2%;
+  }
+
+  .photos{
+    &-item{
+      display: block;
+      width: 25%;
+      &:nth-child(1){
+        left: -5%;
+        top: -10%;
+      }
+      &:nth-child(2){
+        right: -5%;
+        top: 0%;
+        transform: translateY(-20%);
+        background-image: url('../../assets/img/gray_girl.png');
+      }
+      &:nth-child(3){
+        left: 35%;
+        top: -10%;
+      }
+      &:nth-child(4){
+        right: 27%;
+        bottom: 0%;
+        transform: translateY(30%);
+        background-image: url('../../assets/img/grandma.png');
+      }
+      &:nth-child(5){
+        left: 5%;
+        bottom: 5%;
+        transform: translateY(40%);
+        background-image: url('../../assets/img/smile-girl.png');
+      }
+      &:nth-child(6){
+        left: 19%;
+        top: 26%;
+        background-image: url('../../assets/img/muslim.png');
+      }
+      &:nth-child(7){
+        right: -5%;
+        bottom: 5%;
+        transform: translateY(30%);
+        background-image: url('../../assets/img/smile_man.png');
+      }
+    }
+  }
+}
