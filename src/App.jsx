@@ -3,6 +3,9 @@ import { CSSTransition } from "react-transition-group";
 import { Header } from './components/header/Header';
 import { Sidebar } from './components/sidebar/Sidebar';
 import { Info } from './components/info/Info';
+import {Options} from './components/options/Options';
+
+
 export const App = () => {
   const nav_links = 'products pricing partners company'.split(' ')
   return (
@@ -12,6 +15,7 @@ export const App = () => {
         <Header nav={nav_links} />
         <main>
           <Info />
+          <Options/>
         </main>
       </div>
     </>
