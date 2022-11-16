@@ -26,7 +26,7 @@ export const Options = () => {
   const [theme, setTheme] = useState('hRHub')
   const map = {
     hRHub: [hRHub, '#EAF3FF', business_hRHub],
-    mobile: [mobile, '#EAF3FF', business_mobile],
+    mobile: [mobile, '#FFE5ED', business_mobile],
     leave: [leave, '#FFF8E4', business_leave],
     time: [time, '#FFF3EF', business_time],
     claims: [claims, '#E2FBF2', business_claims],
