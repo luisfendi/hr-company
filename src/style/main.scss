@@ -46,9 +46,6 @@ button:hover {
   box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
 }
 
-//
-//
-//padding wrapper
 .wrap {
   padding: 2% 3%;
 }
@@ -69,3 +66,9 @@ button:hover {
 #root {
   position: relative;
 }
+
+.optimize{
+  background-color: rgb(161, 161, 161);
+  border-radius: 5px;
+}
+
