@@ -1,0 +1,13 @@
+.mySwiper {
+  .swiper-pagination {
+    span {
+      background-color: rgb(15, 179, 15);
+    }
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    &:after {
+      color: rgb(15, 179, 15);
+    }
+  }
+}

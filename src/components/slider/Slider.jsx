@@ -1,60 +1,75 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import s from './Slider.module.scss';
-// import { add_script} from "./add_script";
-// import { start_slider } from "./start_slider";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import './swiper.scss';
+import { size_detect } from "./size_detect";
 
+//imgs fot slider
+import slide_0 from '../../assets/img/slide_0.png';
+import slide_1 from '../../assets/img/slide_1.png';
+import slide_2 from '../../assets/img/slide_2.png';
+import slide_3 from '../../assets/img/slide_3.png';
+import slide_4 from '../../assets/img/slide_4.png';
+import slide_5 from '../../assets/img/slide_5.png';
+import slide_6 from '../../assets/img/slide_6.png';
 
-import grandma from '../../assets/img/grandma.png';
-import gray_girl from '../../assets/img/gray_girl.png';
-import muslim from '../../assets/img/muslim.png';
-import red_girl from '../../assets/img/red_girl.png';
-import smile_man from '../../assets/img/smile_man.png';
-import smile_girl from '../../assets/img/smile-girl.png';
-import blue_man from '../../assets/img/blue_man.png';
 
 export const Slider = () => {
-  const people = [
-    grandma, gray_girl, muslim, red_girl, smile_girl, smile_man, blue_man
+  const [slides_preview, setSlides_preview] = useState(2);
+  const slides = [
+    slide_0, slide_1, slide_2, slide_3, slide_4, slide_5, slide_6
   ]
-  const targets = 'ceo hr employees softdevelopment recrouter ui ux'.split(' ')
+  const targets = 'ceo hr employees developers recrouter ui ux'.split(' ')
 
-  function SliderItem({ src, target, text }) {
+  useEffect(() => {
+    setSlides_preview(size_detect())
+    window.onresize = () => {
+      setSlides_preview(size_detect())
+    }
+  })
+
+
+  function SliderItem({ src, target }) {
     return (
-      <div className={`${s.item}`}>
-        <div className={`${s['item-image']}`}>
+      <div className={`${s['slide-content']}`}>
+        <div className={`${s['slide-content--img']}`}>
           <img src={src} alt="avatar" />
         </div>
         <h5>
           for {target}
         </h5>
         <p>
-          {text}
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi nesciunt iure mollitia eveniet vel est.
         </p>
       </div>
     )
   }
-
-  const props = {
-    emulateTouch: true
-  }
-
   return (
-    <div className={`${s.content} wrap`}>
+    <div className={`${s.content} ${s.wrap} wrap`}>
       <p className={`${s['content-text']}`}>people central</p>
       <h2 className={`${s['content-title']}`}>Bring your people together in one place.</h2>
-      {/* <div className={s.slider}> */}
-      <Carousel {...props}>
+      <Swiper
+        spaceBetween={40}
+        slidesPerView={slides_preview}
+        className={`${s.slider} mySwiper`}
+        modules={[Pagination, Navigation]}
+        navigation={true}
+        pagination={{
+          type: "progressbar",
+        }}
+      >
         {
-          people.map((el, i) => (
-            <div key={i}>
+          slides.map((el, i) => (
+            <SwiperSlide key={i} className={`${s.slide}`}>
               <SliderItem src={el} target={targets[i]} />
-            </div>
+            </SwiperSlide>
           ))
         }
-      </Carousel>
-      {/* </div> */}
+      </Swiper>
     </div>
   )
 }
