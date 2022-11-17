@@ -10,16 +10,19 @@
 }
 
 .slide {
+  &-img {
+    min-width: 100px;
+    min-height: 150px;
+    img {
+      max-width: 100%;
+    }
+  }
+
   &-content {
     height: 100%;
     background-color: #EAF3FF;
 
-    &--img {
-      img {
-        max-width: 100%;
-      }
-    }
-
+    
     h5 {
       font-size: 12px;
       word-wrap: break-word;

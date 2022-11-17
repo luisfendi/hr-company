@@ -1,0 +1,103 @@
+@import '../../style/main.scss';
+
+.content.wrap {
+  padding-bottom: 5%;
+}
+
+.content {
+  position: relative;
+
+  &-title {
+    padding-right: 40%;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -15%;
+    right: 3%;
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../assets/img/bg_mission.png');
+    z-index: -1;
+  }
+}
+
+.list {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 40%;
+
+  li {
+    width: 45%;
+    margin-top: 4%;
+
+    p {
+      font-size: 14px;
+      line-height: 1;
+      font-weight: bold;
+
+      span {
+        color: #0A61F7;
+      }
+    }
+  }
+}
+
+.investors {
+  margin-top: 10%;
+  text-align: center;
+
+  h4 {
+    color: gray;
+  }
+}
+
+.companies {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 5%;
+
+  li {
+    max-width: 20%;
+    margin-right: 5%;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  border-bottom: 1px solid rgb(175, 175, 175);
+}
+
+@media (min-width: $laptop) {
+  .content {
+    &:after {
+      width: 250px;
+      right: 16%;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .content {
+    &-title {
+      padding-right: 60%;
+    }
+
+    &:after {
+      width: 400px;
+      right: 20%;
+    }
+  }
+
+  .list {
+    padding-right: 60%;
+  }
+}

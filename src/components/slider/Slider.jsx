@@ -7,6 +7,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import './swiper.scss';
 import { size_detect } from "./size_detect";
+import { optimize } from "../../js/optimizePhoto";
+
 
 //imgs fot slider
 import slide_0 from '../../assets/img/slide_0.png';
@@ -26,17 +28,18 @@ export const Slider = () => {
   const targets = 'ceo hr employees developers recrouter ui ux'.split(' ')
 
   useEffect(() => {
-    setSlides_preview(size_detect())
+    optimize(`.${s['slide-img']}`, 'optimize');
+    setSlides_preview(size_detect());
     window.onresize = () => {
       setSlides_preview(size_detect())
     }
-  })
+  }, [])
 
 
   function SliderItem({ src, target }) {
     return (
       <div className={`${s['slide-content']}`}>
-        <div className={`${s['slide-content--img']}`}>
+        <div className={`${s['slide-img']} optimize`}>
           <img src={src} alt="avatar" />
         </div>
         <h5>

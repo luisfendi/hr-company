@@ -6,7 +6,7 @@ import { Options } from './components/options/Options';
 import { Slider } from './components/slider/Slider.jsx';
 import { Yellow } from './components/yellow/Yellow';
 import { Support } from './components/support/Support';
-
+import { Mission } from './components/mission/Mission';
 export const App = () => {
   const nav_links = 'products pricing partners company'.split(' ')
 
@@ -21,6 +21,7 @@ export const App = () => {
           <Slider/>
           <Yellow/>
           <Support/>
+          <Mission/>
         </main>
       </div>
     </>
