@@ -90,7 +90,6 @@ export const Options = () => {
         timeout={1}
         classNames="bild"
         nodeRef={nodeRef}
-        appear={true}
         mountOnEnter={true}
       >
         <div

@@ -5,7 +5,7 @@ import tg from '../../assets/img/tg.png';
 import inst from '../../assets/img/inst.png';
 import gh from '../../assets/img/gh.png';
 import link from '../../assets/img/link.png';
-
+import { List } from './list/List';
 
 export const Footer = () => {
   const social = 'tg inst gh link'
@@ -35,6 +35,14 @@ export const Footer = () => {
             <div></div>
           </div>
         </div>
+        <div className={s.lists}>
+          <div className={`${s['lists-products']}`}>
+            <List head={'Products'} items={'HRHub Leave Time claims payroll benefits mobile'} />
+          </div>
+          <List head={'Resources'} items={'Library blog helpCenter pricing'} />
+          <List head={'company'} items={'aboutUs customers contactUs press careers partners'} />
+          <List head={'legal'} items={'service privacyPolicy Security'} />
+        </div>
       </div>
 
 
@@ -50,7 +58,7 @@ export const Footer = () => {
         </div>
 
         <div className={s.contacts}>
-        <h4>Contact us</h4>
+          <h4>Contact us</h4>
           <ul>
             <li><a href="">Contact Sales</a></li>
             <li><a href="">support@swingvy.com</a></li>

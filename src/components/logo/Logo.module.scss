@@ -1,13 +1,14 @@
-.logo{
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  &:hover{
-    padding: 3%;
+.logo {
+  max-height: 40px;
+  width: max-content;
+
+  &:hover {
+    img {
+      transform: scale(0.9);
+    }
   }
-  img{
+
+  img {
     display: block;
     max-width: 100%;
   }
