@@ -11,3 +11,21 @@ $laptop: 720px;
 $desktop: 1024px;
 
 
+@mixin pseudo($width) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $width;
+  aspect-ratio: 1/1;
+  display: block;
+  background-color: black;
+  color: black;
+}
+
+@mixin bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color:lawngreen;
+}
