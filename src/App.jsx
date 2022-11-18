@@ -8,7 +8,7 @@ import { Yellow } from './components/yellow/Yellow';
 import { Support } from './components/support/Support';
 import { Mission } from './components/mission/Mission';
 import { Menegment } from './components/menegment/Menegment';
-
+import { Footer } from './components/footer/Footer';
 
 
 export const App = () => {
@@ -28,6 +28,9 @@ export const App = () => {
           <Mission/>
           <Menegment/>
         </main>
+        <footer>
+          <Footer/>
+        </footer>
       </div>
     </>
   )
