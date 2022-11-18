@@ -19,17 +19,9 @@
   }
 
   &-button {
+    margin: 0 auto;
     margin-top: 10%;
-
-    div {
-      padding: 0;
-
-      button {
-        padding: 5% 7%;
-        background-color: white;
-        color: black;
-      }
-    }
+    width: max-content;
   }
 }
 

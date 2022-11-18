@@ -91,15 +91,10 @@
 }
 
 .button {
+  width: max-content;
   margin: 0 auto;
   margin-top: 5%;
   order: 4;
-
-  div {
-    button {
-      padding: 5% 7%;
-    }
-  }
 }
 
 @media (min-width: $laptop) {
@@ -178,14 +173,6 @@
 
     &-image {
       height: 100%;
-    }
-  }
-
-  .button {
-    div {
-      button {
-        padding: 15% 19%;
-      }
     }
   }
 }
