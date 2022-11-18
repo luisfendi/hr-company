@@ -31,7 +31,7 @@ export const Slider = () => {
     optimize(`.${s['slide-img']}`, 'optimize');
     setSlides_preview(size_detect());
     window.onresize = () => {
-      setSlides_preview(size_detect())
+      setSlides_preview(size_detect());
     }
   }, [])
 
