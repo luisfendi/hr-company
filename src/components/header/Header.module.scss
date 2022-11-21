@@ -3,8 +3,17 @@
 .header {
   display: flex;
   align-items: center;
-  // flex-wrap: wrap;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 25;
+  background-color: white;
+
+  &__disappear {
+    transform: translateY(-100%);
+  }
 
   &-nav {
     flex-grow: 2;
@@ -15,10 +24,6 @@
     justify-content: space-between;
 
     &>li {
-      // min-width: 15%;
-      // padding: 1% 2%;
-      // width: 25%;
-
       a {
         text-transform: uppercase;
         font-style: normal;
@@ -75,6 +80,7 @@
   z-index: 15;
   text-align: left;
   margin-right: 3%;
+
   // width: 100px;
   a {
     z-index: 5;
@@ -94,6 +100,7 @@
     background-color: white;
     z-index: 0;
     width: 130%;
+
     li {
       padding: 2% 4%;
       border: 1px solid black;
@@ -102,6 +109,7 @@
         font-size: 12px;
         text-transform: uppercase;
         font-weight: 400;
+
         &:hover {
           color: blue;
           font-weight: bold;

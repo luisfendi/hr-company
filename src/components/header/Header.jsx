@@ -1,18 +1,22 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef} from "react";
 import s from './Header.module.scss';
 import { Logo } from "../logo/Logo";
 import { Link as NavbarLink } from '../links/Link';
 import { Button } from "../button/Button";
 import { drop_menu } from "../../js/dropMenu";
+import { disappear } from "./appear";
+
+
 
 export const Header = ({ nav }) => {
-
+  const headerRef = useRef(null)
   useEffect(() => {
     drop_menu(s.dropdownItem, `${s['dropdownItem__active']}`)
+    disappear(headerRef, s['header__disappear'])
   })
 
   return (
-    <div className={`${s.header} wrap`}>
+    <div className={`${s.header} wrap`} ref={headerRef}>
       <div className={`${s['header-logo']}`}>
         <Logo />
       </div>
