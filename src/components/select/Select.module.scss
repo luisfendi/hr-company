@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 2px;
-    width: 15%;
+    width: 35%;
     aspect-ratio: 1/1;
     padding: 0;
     margin: 0;
@@ -140,4 +140,12 @@
   background-color: white;
   width: 70%;
   justify-content: space-between;
+}
+
+@media (min-width: $laptop) {
+  .block{
+    &-btn{
+      width: 15%;
+    }
+  }
 }
