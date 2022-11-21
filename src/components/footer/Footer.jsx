@@ -6,6 +6,7 @@ import inst from '../../assets/img/inst.png';
 import gh from '../../assets/img/gh.png';
 import link from '../../assets/img/link.png';
 import { List } from './list/List';
+import { Select } from '../select/Select';
 
 export const Footer = () => {
   const social = 'tg inst gh link'
@@ -48,17 +49,14 @@ export const Footer = () => {
 
       <div className={`${s.block} ${s['block_2']}`}>
         <div className={s.country}>
-          <h4>country</h4>
-          <select name="" id="">
-            <option value="" disabled>страна</option>
-            <option value="">German</option>
-            <option value="">Rus</option>
-            <option value="">Ukraine</option>
-          </select>
+          <h4 className={s.title}>country</h4>
+          <div>
+            <Select options={'Germany Russia USA Canada'}/>
+          </div>
         </div>
 
         <div className={s.contacts}>
-          <h4>Contact us</h4>
+          <h4 className={s.title}>Contact us</h4>
           <ul>
             <li><a href="">Contact Sales</a></li>
             <li><a href="">support@swingvy.com</a></li>
@@ -67,7 +65,7 @@ export const Footer = () => {
         </div>
 
         <div className={`${s.social}`}>
-          <h4>Swingvy © 2020</h4>
+          <h4 className={s.title}>Swingvy © 2020</h4>
           <ul>
             {
               social.split(' ').map((el, i) => (

@@ -18,13 +18,11 @@
   }
 }
 
-.block {
-  h4 {
-    color: gray;
-    font-weight: 400;
-    font-size: 14px;
-    text-transform: uppercase;
-  }
+.title {
+  color: gray;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .block_1 {
@@ -93,12 +91,14 @@
 .contacts {
   width: 30%;
 }
-.country{
+
+.country {
   max-width: 40%;
 }
 
 .contacts {
   margin-left: auto;
+
   ul {
     li {
       line-height: 1;
@@ -115,6 +115,7 @@
 
 .social {
   padding-left: 5%;
+
   ul {
     max-width: 100%;
     display: flex;
@@ -122,6 +123,7 @@
     margin-top: 5%;
     width: 100%;
     justify-content: space-between;
+
     li {
       display: block;
       width: 15%;
@@ -166,43 +168,51 @@
       li {
         padding-left: 25%;
         position: relative;
+
         &:before {
           @include pseudo (20%);
           @include bg;
           background-color: transparent;
         }
-        &:nth-child(1){
-          &:before{
+
+        &:nth-child(1) {
+          &:before {
             background-image: url('../../assets/img/hRHub.svg');
           }
         }
-        &:nth-child(2){
-          &:before{
+
+        &:nth-child(2) {
+          &:before {
             background-image: url('../../assets/img/leave.svg');
           }
         }
-        &:nth-child(3){
-          &:before{
+
+        &:nth-child(3) {
+          &:before {
             background-image: url('../../assets/img/time.svg');
           }
         }
-        &:nth-child(4){
-          &:before{
+
+        &:nth-child(4) {
+          &:before {
             background-image: url('../../assets/img/claims.svg');
           }
         }
-        &:nth-child(5){
-          &:before{
+
+        &:nth-child(5) {
+          &:before {
             background-image: url('../../assets/img/payroll.svg');
           }
         }
-        &:nth-child(6){
-          &:before{
+
+        &:nth-child(6) {
+          &:before {
             background-image: url('../../assets/img/benefits.svg');
           }
         }
-        &:nth-child(7){
-          &:before{
+
+        &:nth-child(7) {
+          &:before {
             background-image: url('../../assets/img/mobile.svg');
           }
         }
