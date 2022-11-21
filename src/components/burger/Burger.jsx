@@ -9,7 +9,7 @@ export default ({ clickBurger, open }) => {
             <div
                 className={s[`burger-button`]}
                 onClick={(e) => {
-                    e.stopPropagation()
+                    // e.stopPropagation()
                     clickBurger()
                 }}
             >
