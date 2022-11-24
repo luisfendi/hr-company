@@ -7,7 +7,18 @@ import { Phone } from "./telForm/Phone";
 
 export const Popup = ({ msg, btn, show, close }) => {
   const nodeRef = useRef(null);
-  const [request, setRequest] = useState(false)
+  const [request, setRequest] = useState(false);
+  const [approved, setApproved] = useState(false);
+  const [visible, setVisible] = useState(true);
+
+  function approveCall() {
+    setApproved(true); 
+    setRequest(false);
+    setTimeout(() => {
+      setVisible(false)
+    }, 500)
+  }
+
   return (
     <CSSTransition
       classNames="my-popup"
@@ -15,8 +26,9 @@ export const Popup = ({ msg, btn, show, close }) => {
       mountOnEnter={true}
       unmountOnExit={true}
       appear={true}
-      in={show}
+      in={show && visible}
       timeout={400}
+      onExit={() => setRequest(false)}
     >
       <div className={s.popup} ref={nodeRef}>
         <h3 className={s.title}>{msg}</h3>
@@ -24,17 +36,20 @@ export const Popup = ({ msg, btn, show, close }) => {
         <button
           onClick={close}
           className={s.close}><span></span></button>
-        <p>{`${request}`}</p>
         <div className={s.buttons}>
           {
-            !request && (<div className={s.btn} onClick={() => setRequest(true)}>
-            <Button >{btn}</Button>
-          </div>)
-          }
-          {
-            request && (<div className={s.form}>
-              <Phone />
-            </div>)
+            approved
+              ? (<div className={`${s.btn} ${s['btn__approve']}`} onClick={() => setRequest(true)}>
+                <Button >принято</Button>
+              </div>)
+              : request
+                ? (<div className={s.form}>
+                  <Phone complete={() => { approveCall() }} />
+                </div>)
+                : !request && !approved
+                  ? (<div className={s.btn} onClick={() => setRequest(true)}>
+                    <Button >{btn}</Button>
+                  </div>) : ''
           }
         </div>
 

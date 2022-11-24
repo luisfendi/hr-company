@@ -19,7 +19,6 @@ export const App = () => {
     rootMargin: '40px',
     threshold: 0,
     delay: 300,
-    onChange: function () { console.log(entry) }
   });
 
   const [popup_help, setPopup_help] = useState(true)

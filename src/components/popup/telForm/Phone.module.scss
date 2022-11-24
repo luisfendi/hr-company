@@ -6,19 +6,27 @@
   font-size: 12px;
   height: 100%;
   input{
-    // max-height: 100%;
-    // max-width: 100%;
     border-radius: 0;
-    flex-grow: 2;
-    // padding: 0.5rem 0.7rem;
-    padding: 0;
+    padding: 0.5rem 0.7rem;
+    font-size: 12px;
   }
   button{
-    display: block;
-    padding: 0;
-    width: 10%;
+    display: flex;
+    width: 25%;
     min-width: 10%;
     aspect-ratio: 1/1;
-    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    border-radius: 0;
+    padding: 1px;
+    @include bg;
+    background-color: transparent;
+    background-color: rgb(168, 229, 245);
+    background-image: url('../../../assets/img/complete.svg');
+    cursor: pointer;
+    &:hover{
+      background-color: rgb(136, 199, 214);
+    }
   }
 }
