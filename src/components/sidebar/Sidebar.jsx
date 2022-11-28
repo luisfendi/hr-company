@@ -6,7 +6,7 @@ import './appear_animation.scss';
 import { Link as SidebarLink } from '../links/Link';
 import { Button } from "../button/Button";
 import { Logo } from "../logo/Logo";
-
+import { Link } from "react-router-dom";
 
 export const Sidebar = ({ nav }) => {
   const [sidebar, setSidebar] = useState(false);
@@ -52,10 +52,14 @@ export const Sidebar = ({ nav }) => {
 
           <div className={`${s['sidebar-subBlock']}`}>
             <div className={`${s['sidebar-subBlock--button']} ${s['sidebar-subBlock--button__signIn']}`}>
-              <Button>sign in</Button>
+              <Link to={'/login'}>
+                <Button>sign in</Button>
+              </Link>
             </div>
             <div className={`${s['sidebar-subBlock--button']} ${s['sidebar-subBlock--button__request']}`}>
-              <Button>request demo</Button>
+              <Link to={'/demo'}>
+                <Button>request demo</Button>
+              </Link>
             </div>
           </div>
         </div>
