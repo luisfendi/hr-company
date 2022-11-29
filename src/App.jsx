@@ -26,7 +26,7 @@ export const App = () => {
   useEffect(() => {
     let timer = setTimeout(() => {
       setLoading(false)
-    }, 3000)
+    }, 1200)
     return () => { clearTimeout(timer) }
   }, [])
 
@@ -39,16 +39,17 @@ export const App = () => {
       }
       {
         !loading && (<>
+          <Sidebar nav={nav_links} />
           <div id="detail">
             <Header nav={nav_links} />
             <Outlet />
+            <div ref={popup}></div>
             <Footer />
             <div className="popup popup__help">
               <Popup
                 msg={"Заказать звонок помощника"}
                 btn="хочу звонок"
                 show={inView && popup_help}
-                // show={ popup_help}
                 close={() => setPopup_help(false)}
               />
             </div>
