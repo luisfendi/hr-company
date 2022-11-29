@@ -11,6 +11,7 @@ import ErrorPage from './pages/error/Error';
 import { Login } from './pages/login/Login';
 import { Main } from './pages/main/Main';
 import {Spinner} from './components/spinner/Spinner';
+import { NoMatch } from './pages/nomatch/NoMatch';
 
 const router = createBrowserRouter([
   {
@@ -28,9 +29,13 @@ const router = createBrowserRouter([
         element: <Login />,
         errorElement: <ErrorPage />,
       },
-      { 
-        // path: '*',
-        // errorElement: <ErrorPage/>
+      // { 
+      //   path: 'demo',
+      //   errorElement: <ErrorPage/>
+      // },
+      {
+        path: '*',
+        element: <NoMatch/>
       }
     ]
   }
