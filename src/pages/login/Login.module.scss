@@ -1,0 +1,31 @@
+@import '../../style/main.scss';
+
+.login {
+    margin-top: 20%;
+    text-align: center;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.wrapper {
+    background-color: rgba(0,0,0,0.05);
+    margin: 0 auto;
+    padding: 7%;
+    border: 5px solid blue;
+    border-radius: 15px;
+    width: 70%;
+}
+
+.title{
+    font-size: 18px;
+    text-align: left;
+}
+.form {
+    text-align: left;
+    input{
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        margin: 5% 0;
+    }
+}

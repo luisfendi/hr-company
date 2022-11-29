@@ -1,11 +1,11 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import s from './Header.module.scss';
 import { Logo } from "../logo/Logo";
 import { Link as NavbarLink } from '../links/Link';
 import { Button } from "../button/Button";
 import { drop_menu } from "../../js/dropMenu";
 import { disappear } from "./appear";
-
+import { Link } from "react-router-dom";
 
 
 export const Header = ({ nav }) => {
@@ -24,16 +24,16 @@ export const Header = ({ nav }) => {
         {
           nav.map((el, i) => (
             <li key={i} className={s.dropdownItem}>
-                <NavbarLink
-                  onClick={(e) => { e.preventDefault(); e.stopPropagation() }}
-                  address={`/${el}`}
-                >
-                  {el}
-                </NavbarLink>
+              <NavbarLink
+                onClick={(e) => { e.preventDefault(); e.stopPropagation() }}
+                address={`/${el}`}
+              >
+                {el}
+              </NavbarLink>
               <ul>
                 {
                   [...Array(5)].map((item, k) => (
-                    <li key={k}><a href="#">{`${el}_${k+1}`}</a></li>
+                    <li key={k}><a href="#">{`${el}_${k + 1}`}</a></li>
                   ))
                 }
               </ul>
@@ -43,10 +43,14 @@ export const Header = ({ nav }) => {
       </ul>
       <div className={`${s['header-subBlock']}`}>
         <div className={`${s['header-subBlock--button']} ${s['header-subBlock--button__signIn']}`}>
-          <Button>sign in</Button>
+          <Link to={'/login'}>
+            <Button>sign in</Button>
+          </Link>
         </div>
         <div className={`${s['header-subBlock--button']} ${s['header-subBlock--button__request']}`}>
-          <Button>request demo</Button>
+          <Link to={'/demo'}>
+            <Button>request demo</Button>
+          </Link>
         </div>
       </div>
     </div>
