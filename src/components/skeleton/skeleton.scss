@@ -1,20 +1,80 @@
-.skeleton{
+@import '../../style/main.scss';
+
+.skeleton {
   text-align: center;
-  .block{
+
+  .block {
     margin-top: 10%;
     padding: 0 6%;
     text-align: left;
   }
-  &-header.block{
+
+  &-header.block {
     text-align: center;
     margin-top: 3%;
   }
-  &-slider{
-    justify-content: space-between;
+
+  &-slider {
+    justify-content: space-around;
     display: flex;
     margin-top: 3%;
-    &>div{
+
+    &>div {
       text-align: left;
+    }
+  }
+}
+
+@media (min-width: $laptop) {
+  .skeleton {
+    text-align: center;
+
+    .block {
+      margin-top: 3%;
+      padding: 0 6%;
+      text-align: left;
+    }
+
+    &-header.block {
+      margin-top: 3%;
+    }
+
+    &-slider {
+      justify-content: center;
+
+      &>div {
+        margin-right: 8%;
+      }
+    }
+  }
+}
+
+@media (min-width: $laptop) {
+  .skeleton {
+    text-align: center;
+
+    .block {
+      &>div {
+        height: 40vh;
+      }
+
+      margin-top: 3%;
+      padding: 0 6%;
+      text-align: left;
+    }
+
+    &-header.block {
+      text-align: center;
+      margin-top: 3%;
+    }
+
+    &-slider {
+      justify-content: center;
+
+      &>div {
+        text-align: left;
+        margin-right: 8%;
+      }
     }
   }
 }
