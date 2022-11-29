@@ -2,13 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Header } from './components/header/Header';
 import { Sidebar } from './components/sidebar/Sidebar';
 import { Footer } from './components/footer/Footer';
-
 import { Outlet } from 'react-router-dom';
-
-// import { HelpPopup } from './components/popup/HelpPopup.jsx/Popup';
 import { Layout } from './components/skeleton/Skeleton';
-// import HeadBodyGrid from './components/skeleton/HeadBodyGrid';
-
 
 export const App = () => {
   const nav_links = 'products pricing partners company'.split(' ')

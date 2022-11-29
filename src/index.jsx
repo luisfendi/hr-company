@@ -10,8 +10,28 @@ import {
 import ErrorPage from './pages/error/Error';
 import { Login } from './pages/login/Login';
 import { Main } from './pages/main/Main';
-import {Spinner} from './components/spinner/Spinner';
+import { Spinner } from './components/spinner/Spinner';
 import { NoMatch } from './pages/nomatch/NoMatch';
+import { Type } from './pages/type/Type';
+import { Item, loader as ItemLoader } from './pages/item/Item';
+
+const nav_themes = 'products pricing partners'
+  .split(' ')
+  .map((el, i) => {
+    return {
+      path: `${el}`,
+      element: <Type/>,
+      children: [
+        {
+          path: `/${el}/:id`,
+          element: <Item/>,
+          loader: ItemLoader,
+        }
+      ]
+    }
+  });
+
+
 
 const router = createBrowserRouter([
   {
@@ -29,14 +49,11 @@ const router = createBrowserRouter([
         element: <Login />,
         errorElement: <ErrorPage />,
       },
-      // { 
-      //   path: 'demo',
-      //   errorElement: <ErrorPage/>
-      // },
       {
         path: '*',
-        element: <NoMatch/>
-      }
+        element: <NoMatch />
+      },
+      ...nav_themes
     ]
   }
 ], {
@@ -46,7 +63,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} fallbackElement={<Spinner/>}/>
+    <RouterProvider router={router} fallbackElement={<Spinner />} />
   </React.StrictMode>
 );
 
