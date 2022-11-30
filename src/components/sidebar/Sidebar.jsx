@@ -48,6 +48,8 @@ export const Sidebar = ({ nav }) => {
                 </li>
               ))
             }
+            <li><Link to='pricing'>pricing</Link></li>
+            <li> <Link to='company'>company</Link></li>
           </ul>
 
           <div className={`${s['sidebar-subBlock']}`}>

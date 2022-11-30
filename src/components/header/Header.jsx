@@ -34,10 +34,9 @@ export const Header = ({ nav }) => {
                 {
                   [...Array(5)].map((item, k) => (
                     <li key={k}>
-                      <Link to={`/${el}/${k + 1}`} onClick={(e) => e.stopPropagation()}>
+                      <Link to={`/types/${el}/${k + 1}`} onClick={(e) => e.stopPropagation()}>
                         {`${el}_${k + 1}`}
                       </Link>
-                      {/* <a href="#">{`${el}_${k + 1}`}</a> */}
                     </li>
                   ))
                 }
@@ -45,7 +44,10 @@ export const Header = ({ nav }) => {
             </li>
           ))
         }
+        <li className={s.dropdownItem}> <Link to='pricing'>pricing</Link></li>
+        <li className={s.dropdownItem}><Link to='company'>company</Link></li>
       </ul>
+        
       <div className={`${s['header-subBlock']}`}>
         <div className={`${s['header-subBlock--button']} ${s['header-subBlock--button__signIn']}`}>
           <Link to={'/login'}>
