@@ -4,7 +4,6 @@ import { Sidebar } from './components/sidebar/Sidebar';
 import { Footer } from './components/footer/Footer';
 import { Outlet } from 'react-router-dom';
 import { Layout } from './components/skeleton/Skeleton';
-
 export const App = () => {
   const nav_links = 'products pricing partners company'.split(' ')
  
@@ -17,7 +16,7 @@ export const App = () => {
       setLoading(false)
     }, 1200)
     return () => { clearTimeout(timer) }
-  }, [])
+  },)
 
 
   return (

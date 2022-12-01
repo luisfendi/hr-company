@@ -14,6 +14,7 @@ import { Spinner } from './components/spinner/Spinner';
 import { NoMatch } from './pages/nomatch/NoMatch';
 import { Type } from './pages/type/Type';
 import { Item, loader as ItemLoader } from './pages/item/Item';
+import { Submit, action as FormAction} from './pages/form/Submit';
 
 const nav_themes = 'products pricing partners'
   .split(' ')
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
       {
         path: '*',
         element: <NoMatch />
+      },
+      {
+        path: 'submission',
+        element: <Submit/>,
+        action: FormAction,
       },
       ...nav_themes
     ]
