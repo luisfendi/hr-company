@@ -5,7 +5,7 @@ import { Link as NavbarLink } from '../links/Link';
 import { Button } from "../button/Button";
 import { drop_menu } from "../../js/dropMenu";
 import { disappear } from "./appear";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 export const Header = ({ nav }) => {
@@ -34,9 +34,14 @@ export const Header = ({ nav }) => {
                 {
                   [...Array(5)].map((item, k) => (
                     <li key={k}>
-                      <Link to={`/types/${el}/${k + 1}`} onClick={(e) => e.stopPropagation()}>
+                      <NavLink
+                        className={({ isActive }) => {
+                          return isActive ? s.activeLink : undefined
+                        }}
+                        to={`/types/${el}/${k + 1}`}
+                        onClick={(e) => e.stopPropagation()}>
                         {`${el}_${k + 1}`}
-                      </Link>
+                      </NavLink>
                     </li>
                   ))
                 }
@@ -47,7 +52,7 @@ export const Header = ({ nav }) => {
         <li className={s.dropdownItem}> <Link to='pricing'>pricing</Link></li>
         <li className={s.dropdownItem}><Link to='company'>company</Link></li>
       </ul>
-        
+
       <div className={`${s['header-subBlock']}`}>
         <div className={`${s['header-subBlock--button']} ${s['header-subBlock--button__signIn']}`}>
           <Link to={'/login'}>

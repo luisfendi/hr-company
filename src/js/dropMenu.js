@@ -3,7 +3,8 @@ export const drop_menu = (elem_selector, toggle_selector) => {
     drop_button.forEach((el) => {
         el.onclick = function (e) {
             const current = this;
-            const close = () => {
+            const close = (e) => {
+                console.log(e.target)
                 current.classList.remove(toggle_selector);
                 document.removeEventListener('click', close)
             }
