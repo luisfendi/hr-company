@@ -11,7 +11,9 @@ import { Spinner } from './components/spinner/Spinner';
 export const App = () => {
   const nav_links = 'products partners'.split(' ');
   const nav = useNavigation();
-
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+  })
   return (
     <>
       <Sidebar nav={nav_links} />

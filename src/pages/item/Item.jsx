@@ -37,7 +37,11 @@ export const Item = () => {
         </div>
         <div className={s.text}>
           <h2>{`${kind}: ${id}`}</h2>
-          <p className={`${s.description}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nulla officiis libero, excepturi ex soluta?</p>
+          <p className={`${s.description}`}>Фото аутентичны и загружаются онлайн из сети <span>😃</span>
+          </p>
+          <p>
+            За генерацию картинок спасибо <a href="https://robohash.org/">https://robohash.org/</a>
+          </p>
         </div>
       </div>
     </>

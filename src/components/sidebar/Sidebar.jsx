@@ -36,11 +36,11 @@ export const Sidebar = ({ nav }) => {
             <Logo />
           </div>
           <ul className={`${s['sidebar-nav']}`}
-            onClick={(e) => { e.stopPropagation() }}
+              onClick={(e) => { e.stopPropagation() }}
           >
             <Burger
               open={sidebar}
-              clickBurger={() => { setSidebar(!sidebar) }}
+              clickBurger={(e) => { setSidebar(!sidebar); }}
             />
             {
               nav.map((el, i) => (
